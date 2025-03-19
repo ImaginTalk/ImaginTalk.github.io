@@ -1,0 +1,862 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>ImaginTalk</title>
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/bulma.min.css">
+    <link rel="stylesheet" href="./css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="./css/user.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- <link rel="stylesheet" href="css/custom.css" /> -->
+    <link rel="icon" href="./src/logo.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./js/fontawesome.all.min.js"></script>
+    <script src="./js/bulma-carousel.min.js"></script>
+    <script src="./js/bulma-slider.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+            startup: {
+                renderer: 'svg'
+              }
+        });
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+    <style>
+        .blue-button {
+            background-color: #342a3c !important;
+            color: white !important;
+        }
+        .blue-button:hover {
+            background-color: #342a3c !important; /* 悬停时变暗 */
+            color: white !important;
+        }
+    </style>
+
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1091.0" data-gr-ext-installed="">
+    <div class="content" style="
+        display: flex;
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center;
+    ">
+        <img src="src/title.png" , style="width: 80%;">
+        <br>
+        <p id="authors">
+            <a href="https://jiaxin-ye.github.io/">Jiaxin Ye <sup>1</sup></a>
+            <a href="http://hmshan.io/">Hongming Shan <sup>1 †</sup></a>
+            <br>
+            <br>
+            <span style="font-size: 20px">
+                <sup>1</sup> Fudan University &nbsp;&nbsp;
+                <sup> † </sup> Corresponding Author
+            </span>
+        </p>
+        <div>
+            <!-- <a href=" " target="_blank"><img src="src/header/arxiv.png" alt="arxiv" ,=""
+                style="width: 21px;">[Paper]</a>
+        <a href=" " target="_blank"><img src="src/header/github.png"
+                alt="github" ,="" style="width: 21px;">[Code]</a> -->
+                <div class="column has-text-centered">
+                    <div class="publication-links">
+               
+                        <a href="https://arxiv.org/abs/" target="_blank" class="external-link button is-normal is-rounded is-white blue-button">
+                            <span class="icon"  style="color: white;">
+                                <i class="fas fa-file-pdf"></i>
+                            </span>
+                            <span>Paper</span>
+                        </a>
+                  
+                      
+                        <a href="#" target="_blank" class="external-link button is-normal is-rounded is-white blue-button">
+                            <span class="icon"  style="color: white;">
+                                <i class="fab fa-github"></i>
+                            </span>
+                            <span>Code (in progress)</span>
+                        </a>
+                
+                    </div>
+                </div>
+        </div>
+ 
+        <p id="tldr">
+            <strong>TL;DR</strong>: To explore a challenging <strong>Consistent Video-to-Speech</strong> task, We propose a novel cross-modal discrete diffusion framework <strong>ImaginTalk</strong>, achieving unified cross-modal speech generation with semantics, timbre, and emotional prosody from visual cues simultaneously. 
+        </p>
+    </div>
+
+    <div class="content" style="
+        display: flex;
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center;
+    ">
+        <h2 style="text-align:center;">
+            <strong>Demo Video</strong>
+        </h2>
+        <video  
+            controls 
+            loop 
+            style="max-width: 66%;"
+            poster="src/demo.jpg">
+            <source src="src/demo.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="content" style="
+        display: flex;
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center;
+    ">
+        <h2 style="text-align:center;">
+            <strong>Abstract</strong>
+        </h2>
+        <!-- <img src="src/task.png" , style="width: 60%; text-align: center"> -->
+        <figcaption></figcaption>
+        <p>
+            Vision-guided speech generation aims to produce authentic speech from facial appearance or lip motions without relying on auditory signals, offering significant potential for applications such as dubbing in filmmaking and assisting individuals with aphonia. Despite recent progress, existing methods struggle to achieve unified cross-modal alignment across semantics, timbre, and emotional prosody from visual cues, prompting us to propose <strong>Consistent Video-to-Speech (CV2S)</strong> as an extended task to enhance cross-modal consistency. To tackle emerging challenges, we introduce <strong>ImaginTalk</strong>, a novel cross-modal diffusion framework that generates faithful speech using only visual input, operating within a discrete space. Specifically, we propose a discrete lip aligner that predicts discrete speech tokens from lip videos to capture semantic information, while an error detector identifies misaligned tokens, which are subsequently refined through masked language modeling with BERT. To further enhance the expressiveness of the generated speech, we develop a style diffusion transformer equipped with a face-style adapter that adaptively customizes identity and prosody dynamics across both the channel and temporal dimensions while ensuring synchronization with lip-aware semantic features. Extensive experiments demonstrate that ImaginTalk can generate high-fidelity speech with more accurate semantic details and greater expressiveness in timbre and emotion compared to state-of-the-art baselines.
+        </p>
+        <h2 style="text-align:center;">
+            <strong>Overview of <span style='color: #c36813'>ImaginTalk</span></strong>
+        </h2>
+        <img src="src/main.png" , style="width: 100%;">
+        <p>
+            The input face video is first processed by the face-style adapter to extract the global identity style $\mathbf{c}_\text{id}$ and temporal prosody style $\mathbf{c}_\text{emo}$, while the lip region of interest (ROI) is cropped and processed by a discrete lip aligner to learn semantic features $\mathbf{c}_\text{lip}$. Furthermore, masked speech features are obtained via the codec encoder and forward diffusion process. 
+            Finally, the Style-DiT takes these features as inputs to predict concrete scores through \( N \) Style-DiT blocks and 12 linear heads for 12 level tokens. 
+
+        </p>
+    </div>
+
+    <div class="container">
+        <header role="banner"></header>
+        
+        <main role="main">
+            <article itemscope="" itemtype="https://schema.org/BlogPosting">
+
+            <div class="content" id="comparision-box" role="tabpanel" class="tab-pane fade content">
+                <h2 style="text-align:center;">
+                    <strong>Qualitative Comparison</strong>
+                </h2>
+
+                <div class="subcontent">
+                    <div class="slider-row" style="flex-direction: column; justify-content: space-around; align-items: center;">
+                        <div class="video-container" style="flex-direction: row; margin-bottom: -4px; "> 
+                            
+                            <script>
+                                var methods = ["MTL", "Lip2Wav","VCA-GAN", "LipVoicer", "Face-TTS", "DEmoFace"];
+                                var videoName = "03-01-03-02-02-02-24"; // 示例视频名称
+              
+                                document.write(`
+                                    <div class="video-wrapper" style="margin-right: 40px;">
+                                        <h3 style="align-items: center;"><strong>Silent Ground Truth</strong></h3>
+                                        <video controls muted style="width: 180px;">
+                                            <source src="./data/video_results/${videoName}/${videoName}_GT.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                `);
+
+                                document.write(`
+                                    <div class="video-wrapper">
+                                        <h3 style="align-items: center;">Our ImaginTalk</h3>
+                                        <video controls  style="width: 180px;">
+                                            <source src="./data/video_results/${videoName}/${videoName}_ImaginTalk.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                `);
+                   
+                                document.write(`
+                                    </div>
+                                    <img src="./src/temp1.png" style="width: 82%;  margin-top: -10px;">
+                                    <div class="video-container" style="flex-direction: row;  margin-top: -10px;">
+                                        
+                                `);
+                                    
+                                methods.forEach(method => {
+                                    document.write(`
+                                        <div class="video-wrapper">
+                                            <h4 style="align-items: center;"><strong>${method}</strong></h4>
+                                            <video controls  style="width: 140px;">
+                                                <source src="./data/video_results/${videoName}/${videoName}_${method}.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    `);
+                                });
+                            </script>
+                        </div>
+
+                        
+                        <div class="reference-section"  >
+    
+                            <button class="show-button"  style="font-size: 22px;" onclick="document.getElementById('reference-content3').style.display='block'">
+                                Show Reference Text & Emotion<br> (<strong style="color: #f9f493;">Click after listening 👂</strong>)
+                            </button>
+                            <div id="reference-content3" class="hidden-content">
+                                <p  style="font-size: 20px;"><strong>Text Transcript:</strong> Dogs are sitting by the door.</p>
+                                <p  style="font-size: 20px;"><strong>Predicted Facial Emotion:</strong> Happy </p>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <br>
+
+                <div class="subcontent">
+                    <div class="slider-row" style="flex-direction: column; justify-content: space-around; align-items: center;">
+                        <div class="video-container" style="flex-direction: row; margin-bottom: -4px; "> 
+                            
+                            <script>
+                                var methods = ["MTL", "Lip2Wav","VCA-GAN", "LipVoicer", "Face-TTS", "DEmoFace"];
+                                var videoName = "03-01-02-02-02-02-24"; // 示例视频名称
+              
+                                document.write(`
+                                    <div class="video-wrapper" style="margin-right: 40px;">
+                                        <h3 style="align-items: center;"><strong>Silent Ground Truth</strong></h3>
+                                        <video controls muted style="width: 180px;">
+                                            <source src="./data/video_results/${videoName}/${videoName}_GT.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                `);
+
+                                document.write(`
+                                    <div class="video-wrapper">
+                                        <h3 style="align-items: center;">Our ImaginTalk</h3>
+                                        <video controls  style="width: 180px;">
+                                            <source src="./data/video_results/${videoName}/${videoName}_ImaginTalk.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                `);
+                   
+                                document.write(`
+                                    </div>
+                                    <img src="./src/temp1.png" style="width: 82%;  margin-top: -10px;">
+                                    <div class="video-container" style="flex-direction: row;  margin-top: -10px;">
+                                        
+                                `);
+                                    
+                                methods.forEach(method => {
+                                    document.write(`
+                                        <div class="video-wrapper">
+                                            <h4 style="align-items: center;"><strong>${method}</strong></h4>
+                                            <video controls  style="width: 140px;">
+                                                <source src="./data/video_results/${videoName}/${videoName}_${method}.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    `);
+                                });
+                            </script>
+                        </div>
+
+                        
+                        <div class="reference-section"  >
+    
+                            <button class="show-button"  style="font-size: 22px;" onclick="document.getElementById('reference-content4').style.display='block'">
+                                Show Reference Text & Emotion<br> (<strong style="color: #f9f493;">Click after listening 👂</strong>)
+                            </button>
+                            <div id="reference-content4" class="hidden-content">
+                                <p  style="font-size: 20px;"><strong>Text Transcript:</strong> Dogs are sitting by the door.</p>
+                                <p  style="font-size: 20px;"><strong>Predicted Facial Emotion:</strong> Neutral </p>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <br>
+
+
+                <div class="subcontent">
+                    <div class="slider-row" style="flex-direction: column; justify-content: space-around; align-items: center;">
+                        <div class="video-container" style="flex-direction: row; margin-bottom: -4px; "> 
+                            
+                            <script>
+                                var methods = ["MTL", "Lip2Wav","VCA-GAN", "LipVoicer", "Face-TTS", "DEmoFace"];
+                                var videoName = "M019_dis_3_026"; // 示例视频名称
+              
+                                document.write(`
+                                    <div class="video-wrapper" style="margin-right: 40px;">
+                                        <h3 style="align-items: center;"><strong>Silent Ground Truth</strong></h3>
+                                        <video controls muted style="width: 180px;">
+                                            <source src="./data/video_results/${videoName}/${videoName}_GT.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                `);
+
+                                document.write(`
+                                    <div class="video-wrapper">
+                                        <h3 style="align-items: center;">Our ImaginTalk</h3>
+                                        <video controls  style="width: 180px;">
+                                            <source src="./data/video_results/${videoName}/${videoName}_ImaginTalk.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                `);
+                   
+                                document.write(`
+                                    </div>
+                                    <img src="./src/temp1.png" style="width: 82%;  margin-top: -10px;">
+                                    <div class="video-container" style="flex-direction: row;  margin-top: -10px;">
+                                        
+                                `);
+                                    
+                                methods.forEach(method => {
+                                    document.write(`
+                                        <div class="video-wrapper">
+                                            <h4 style="align-items: center;"><strong>${method}</strong></h4>
+                                            <video controls  style="width: 140px;">
+                                                <source src="./data/video_results/${videoName}/${videoName}_${method}.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    `);
+                                });
+                            </script>
+                        </div>
+
+                        
+                        <div class="reference-section"  >
+    
+                            <button class="show-button"  style="font-size: 22px;" onclick="document.getElementById('reference-content5').style.display='block'">
+                                Show Reference Text & Emotion<br> (<strong style="color: #f9f493;">Click after listening 👂</strong>)
+                            </button>
+                            <div id="reference-content5" class="hidden-content">
+                                <p  style="font-size: 20px;"><strong>Text Transcript:</strong>  No price is too high when true love is at stake. </p>
+                                <p  style="font-size: 20px;"><strong>Predicted Facial Emotion:</strong> Disgust </p>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <br>
+                
+                <div class="subcontent">
+                    <div class="slider-row" style="flex-direction: column; justify-content: space-around; align-items: center;">
+                        <div class="video-container" style="flex-direction: row; margin-bottom: -4px; "> 
+                            
+                            <script>
+                                var methods = ["MTL", "Lip2Wav","VCA-GAN", "LipVoicer", "Face-TTS", "DEmoFace"];
+                                var videoName = "M019_sur_3_014"; // 示例视频名称
+              
+                                document.write(`
+                                    <div class="video-wrapper" style="margin-right: 40px;">
+                                        <h3 style="align-items: center;"><strong>Silent Ground Truth</strong></h3>
+                                        <video controls muted style="width: 180px;">
+                                            <source src="./data/video_results/${videoName}/${videoName}_GT.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                `);
+
+                                document.write(`
+                                    <div class="video-wrapper">
+                                        <h3 style="align-items: center;">Our ImaginTalk</h3>
+                                        <video controls  style="width: 180px;">
+                                            <source src="./data/video_results/${videoName}/${videoName}_ImaginTalk.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                `);
+                   
+                                document.write(`
+                                    </div>
+                                    <img src="./src/temp1.png" style="width: 82%;  margin-top: -10px;">
+                                    <div class="video-container" style="flex-direction: row;  margin-top: -10px;">
+                                        
+                                `);
+                                    
+                                methods.forEach(method => {
+                                    document.write(`
+                                        <div class="video-wrapper">
+                                            <h4 style="align-items: center;"><strong>${method}</strong></h4>
+                                            <video controls  style="width: 140px;">
+                                                <source src="./data/video_results/${videoName}/${videoName}_${method}.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    `);
+                                });
+                            </script>
+                        </div>
+
+                        
+                        <div class="reference-section"  >
+    
+                            <button class="show-button"  style="font-size: 22px;" onclick="document.getElementById('reference-content6').style.display='block'">
+                                Show Reference Text & Emotion<br> (<strong style="color: #f9f493;">Click after listening 👂</strong>)
+                            </button>
+                            <div id="reference-content6" class="hidden-content">
+                                <p  style="font-size: 20px;"><strong>Text Transcript:</strong>  Please dig my potatoes up before frost. </p>
+                                <p  style="font-size: 20px;"><strong>Predicted Facial Emotion:</strong> Surprised </p>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <br>
+
+                
+                <div class="subcontent">
+                    <div class="slider-row" style="flex-direction: column; justify-content: space-around; align-items: center;">
+                        <div class="video-container" style="flex-direction: row; margin-bottom: -4px; "> 
+                            
+                            <script>
+                                var methods = ["MTL", "Lip2Wav","VCA-GAN", "LipVoicer", "Face-TTS", "DEmoFace"];
+                                var videoName = "M019_sad_3_011"; // 示例视频名称
+              
+                                document.write(`
+                                    <div class="video-wrapper" style="margin-right: 40px;">
+                                        <h3 style="align-items: center;"><strong>Silent Ground Truth</strong></h3>
+                                        <video controls muted style="width: 180px;">
+                                            <source src="./data/video_results/${videoName}/${videoName}_GT.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                `);
+
+                                document.write(`
+                                    <div class="video-wrapper">
+                                        <h3 style="align-items: center;">Our ImaginTalk</h3>
+                                        <video controls  style="width: 180px;">
+                                            <source src="./data/video_results/${videoName}/${videoName}_ImaginTalk.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                `);
+                   
+                                document.write(`
+                                    </div>
+                                    <img src="./src/temp1.png" style="width: 82%;  margin-top: -10px;">
+                                    <div class="video-container" style="flex-direction: row;  margin-top: -10px;">
+                                        
+                                `);
+                                    
+                                methods.forEach(method => {
+                                    document.write(`
+                                        <div class="video-wrapper">
+                                            <h4 style="align-items: center;"><strong>${method}</strong></h4>
+                                            <video controls  style="width: 140px;">
+                                                <source src="./data/video_results/${videoName}/${videoName}_${method}.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    `);
+                                });
+                            </script>
+                        </div>
+
+                        
+                        <div class="reference-section"  >
+    
+                            <button class="show-button"  style="font-size: 22px;" onclick="document.getElementById('reference-content7').style.display='block'">
+                                Show Reference Text & Emotion<br> (<strong style="color: #f9f493;">Click after listening 👂</strong>)
+                            </button>
+                            <div id="reference-content7" class="hidden-content">
+                                <p  style="font-size: 20px;"><strong>Text Transcript:</strong>  Before Thursday's exam, review every formula. </p>
+                                <p  style="font-size: 20px;"><strong>Predicted Facial Emotion:</strong> Sad </p>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <br>
+      
+
+                <div class="subcontent">
+                    <div class="slider-row" style="flex-direction: column; justify-content: space-around; align-items: center;">
+                        <div class="video-container" style="flex-direction: row; margin-bottom: -4px; "> 
+                            
+                            <script>
+                                var methods = ["MTL", "Lip2Wav","VCA-GAN", "LipVoicer", "Face-TTS", "DEmoFace"];
+                                var videoName = "W019_sad_3_012"; // 示例视频名称
+              
+                                document.write(`
+                                    <div class="video-wrapper" style="margin-right: 40px;">
+                                        <h3 style="align-items: center;"><strong>Silent Ground Truth</strong></h3>
+                                        <video controls muted style="width: 180px;">
+                                            <source src="./data/video_results/${videoName}/${videoName}_GT.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                `);
+
+                                document.write(`
+                                    <div class="video-wrapper">
+                                        <h3 style="align-items: center;">Our ImaginTalk</h3>
+                                        <video controls  style="width: 180px;">
+                                            <source src="./data/video_results/${videoName}/${videoName}_ImaginTalk.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                `);
+                   
+                                document.write(`
+                                    </div>
+                                    <img src="./src/temp1.png" style="width: 82%;  margin-top: -10px;">
+                                    <div class="video-container" style="flex-direction: row;  margin-top: -10px;">
+                                        
+                                `);
+                                    
+                                methods.forEach(method => {
+                                    document.write(`
+                                        <div class="video-wrapper">
+                                            <h4 style="align-items: center;"><strong>${method}</strong></h4>
+                                            <video controls  style="width: 140px;">
+                                                <source src="./data/video_results/${videoName}/${videoName}_${method}.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    `);
+                                });
+                            </script>
+                        </div>
+
+                        
+                        <div class="reference-section"  >
+    
+                            <button class="show-button"  style="font-size: 22px;" onclick="document.getElementById('reference-content8').style.display='block'">
+                                Show Reference Text & Emotion<br> (<strong style="color: #f9f493;">Click after listening 👂</strong>)
+                            </button>
+                            <div id="reference-content8" class="hidden-content">
+                                <p  style="font-size: 20px;"><strong>Text Transcript:</strong> They enjoy it when I audition.</p>
+                                <p  style="font-size: 20px;"><strong>Predicted Facial Emotion:</strong> Sad </p>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <br>
+
+                <div class="subcontent">
+                    <div class="slider-row" style="flex-direction: column; justify-content: space-around; align-items: center;">
+                        <div class="video-container" style="flex-direction: row; margin-bottom: -4px; "> 
+                            
+                            <script>
+                                var methods = ["MTL", "Lip2Wav","VCA-GAN", "LipVoicer", "Face-TTS", "DEmoFace"];
+                                var videoName = "W019_sur_3_009"; // 示例视频名称
+              
+                                document.write(`
+                                    <div class="video-wrapper" style="margin-right: 40px;">
+                                        <h3 style="align-items: center;"><strong>Silent Ground Truth</strong></h3>
+                                        <video controls muted style="width: 180px;">
+                                            <source src="./data/video_results/${videoName}/${videoName}_GT.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                `);
+
+                                document.write(`
+                                    <div class="video-wrapper">
+                                        <h3 style="align-items: center;">Our ImaginTalk</h3>
+                                        <video controls  style="width: 180px;">
+                                            <source src="./data/video_results/${videoName}/${videoName}_ImaginTalk.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                `);
+                   
+                                document.write(`
+                                    </div>
+                                    <img src="./src/temp1.png" style="width: 82%;  margin-top: -10px;">
+                                    <div class="video-container" style="flex-direction: row;  margin-top: -10px;">
+                                        
+                                `);
+                                    
+                                methods.forEach(method => {
+                                    document.write(`
+                                        <div class="video-wrapper">
+                                            <h4 style="align-items: center;"><strong>${method}</strong></h4>
+                                            <video controls  style="width: 140px;">
+                                                <source src="./data/video_results/${videoName}/${videoName}_${method}.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    `);
+                                });
+                            </script>
+                        </div>
+
+                        
+                        <div class="reference-section"  >
+    
+                            <button class="show-button"  style="font-size: 22px;" onclick="document.getElementById('reference-content9').style.display='block'">
+                                Show Reference Text & Emotion<br> (<strong style="color: #f9f493;">Click after listening 👂</strong>)
+                            </button>
+                            <div id="reference-content9" class="hidden-content">
+                                <p  style="font-size: 20px;"><strong>Text Transcript:</strong> I just saw Jim near the new archaeological museum.</p>
+                                <p  style="font-size: 20px;"><strong>Predicted Facial Emotion:</strong> Surprised </p>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <br>
+
+                <div class="subcontent">
+                    <div class="slider-row" style="flex-direction: column; justify-content: space-around; align-items: center;">
+                        <div class="video-container" style="flex-direction: row; margin-bottom: -4px; "> 
+                            
+                            <script>
+                                var methods = ["MTL", "Lip2Wav","VCA-GAN", "LipVoicer", "Face-TTS", "DEmoFace"];
+                                var videoName = "W019_hap_3_005"; // 示例视频名称
+              
+                                document.write(`
+                                    <div class="video-wrapper" style="margin-right: 40px;">
+                                        <h3 style="align-items: center;"><strong>Silent Ground Truth</strong></h3>
+                                        <video controls muted style="width: 180px;">
+                                            <source src="./data/video_results/${videoName}/${videoName}_GT.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                `);
+
+                                document.write(`
+                                    <div class="video-wrapper">
+                                        <h3 style="align-items: center;">Our ImaginTalk</h3>
+                                        <video controls  style="width: 180px;">
+                                            <source src="./data/video_results/${videoName}/${videoName}_ImaginTalk.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                `);
+                   
+                                document.write(`
+                                    </div>
+                                    <img src="./src/temp1.png" style="width: 82%;  margin-top: -10px;">
+                                    <div class="video-container" style="flex-direction: row;  margin-top: -10px;">
+                                        
+                                `);
+                                    
+                                methods.forEach(method => {
+                                    document.write(`
+                                        <div class="video-wrapper">
+                                            <h4 style="align-items: center;"><strong>${method}</strong></h4>
+                                            <video controls  style="width: 140px;">
+                                                <source src="./data/video_results/${videoName}/${videoName}_${method}.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    `);
+                                });
+                            </script>
+                        </div>
+
+                        
+                        <div class="reference-section"  >
+    
+                            <button class="show-button"  style="font-size: 22px;" onclick="document.getElementById('reference-content10').style.display='block'">
+                                Show Reference Text & Emotion<br> (<strong style="color: #f9f493;">Click after listening 👂</strong>)
+                            </button>
+                            <div id="reference-content10" class="hidden-content">
+                                <p  style="font-size: 20px;"><strong>Text Transcript:</strong> The eastern coast is a place for pure pleasure and excitement.</p>
+                                <p  style="font-size: 20px;"><strong>Predicted Facial Emotion:</strong> Happy </p>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <br>
+
+
+                <div class="subcontent">
+                    <div class="slider-row" style="flex-direction: column; justify-content: space-around; align-items: center;">
+                        <div class="video-container" style="flex-direction: row; margin-bottom: -4px; "> 
+                            
+                            <script>
+                                var methods = ["MTL", "Lip2Wav","VCA-GAN", "LipVoicer", "Face-TTS", "DEmoFace"];
+                                var videoName = "OLHh9E5ilZ4_0001"; // 示例视频名称
+              
+                                document.write(`
+                                    <div class="video-wrapper" style="margin-right: 40px;">
+                                        <h3 style="align-items: center;"><strong>Silent Ground Truth</strong></h3>
+                                        <video controls muted style="width: 180px;">
+                                            <source src="./data/video_results/${videoName}/${videoName}_GT.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                `);
+
+                                document.write(`
+                                    <div class="video-wrapper">
+                                        <h3 style="align-items: center;">Our ImaginTalk</h3>
+                                        <video controls  style="width: 180px;">
+                                            <source src="./data/video_results/${videoName}/${videoName}_ImaginTalk.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                `);
+                   
+                                document.write(`
+                                    </div>
+                                    <img src="./src/temp1.png" style="width: 82%;  margin-top: -10px;">
+                                    <div class="video-container" style="flex-direction: row;  margin-top: -10px;">
+                                        
+                                `);
+                                    
+                                methods.forEach(method => {
+                                    document.write(`
+                                        <div class="video-wrapper">
+                                            <h4 style="align-items: center;"><strong>${method}</strong></h4>
+                                            <video controls  style="width: 140px;">
+                                                <source src="./data/video_results/${videoName}/${videoName}_${method}.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    `);
+                                });
+                            </script>
+                        </div>
+
+                        
+                        <div class="reference-section"  >
+    
+                            <button class="show-button"  style="font-size: 22px;" onclick="document.getElementById('reference-content15').style.display='block'">
+                                Show Reference Text & Emotion<br> (<strong style="color: #f9f493;">Click after listening 👂</strong>)
+                            </button>
+                            <div id="reference-content15" class="hidden-content">
+                                <p  style="font-size: 20px;"><strong>Text Transcript:</strong> They're both exactly the same size and shape to an uncanny degree.</p>
+                                <p  style="font-size: 20px;"><strong>Predicted Facial Emotion:</strong> Neutral </p>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <br>
+
+                <div class="subcontent">
+                    <div class="slider-row" style="flex-direction: column; justify-content: space-around; align-items: center;">
+                        <div class="video-container" style="flex-direction: row; margin-bottom: -4px; "> 
+                            
+                            <script>
+                                var methods = ["MTL", "Lip2Wav","VCA-GAN", "LipVoicer", "Face-TTS", "DEmoFace"];
+                                var videoName = "wSepGxx36To_0009"; // 示例视频名称
+              
+                                document.write(`
+                                    <div class="video-wrapper" style="margin-right: 40px;">
+                                        <h3 style="align-items: center;"><strong>Silent Ground Truth</strong></h3>
+                                        <video controls muted style="width: 180px;">
+                                            <source src="./data/video_results/${videoName}/${videoName}_GT.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                `);
+
+                                document.write(`
+                                    <div class="video-wrapper">
+                                        <h3 style="align-items: center;">Our ImaginTalk</h3>
+                                        <video controls  style="width: 180px;">
+                                            <source src="./data/video_results/${videoName}/${videoName}_ImaginTalk.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                `);
+                   
+                                document.write(`
+                                    </div>
+                                    <img src="./src/temp1.png" style="width: 82%;  margin-top: -10px;">
+                                    <div class="video-container" style="flex-direction: row;  margin-top: -10px;">
+                                        
+                                `);
+                                    
+                                methods.forEach(method => {
+                                    document.write(`
+                                        <div class="video-wrapper">
+                                            <h4 style="align-items: center;"><strong>${method}</strong></h4>
+                                            <video controls  style="width: 140px;">
+                                                <source src="./data/video_results/${videoName}/${videoName}_${method}.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    `);
+                                });
+                            </script>
+                        </div>
+
+                        
+                        <div class="reference-section"  >
+    
+                            <button class="show-button"  style="font-size: 22px;" onclick="document.getElementById('reference-content16').style.display='block'">
+                                Show Reference Text & Emotion<br> (<strong style="color: #f9f493;">Click after listening 👂</strong>)
+                            </button>
+                            <div id="reference-content16" class="hidden-content">
+                                <p  style="font-size: 20px;"><strong>Text Transcript:</strong> But some institutions would share much more pain than others.</p>
+                                <p  style="font-size: 20px;"><strong>Predicted Facial Emotion:</strong> Neutral </p>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <br>
+
+      
+                <details>
+                    <summary> See Mel-Spectrogram Comparison </summary>
+                    <img src="data/fig/mel.png" , style="width: 100%;">
+                    <p>
+                        As shown in figure, we compare text-free L2S and text-dependent F2S methods. For L2S methods, we observe severe over-smoothing or acoustic artifacts, leading to significant degradation in speech quality and limiting their practical value. For F2S methods, while they can generate higher-quality speech with the aid of reference text, they struggle to align with the video, resulting in poor lip synchronization. In contrast, our method generates speech with richer acoustic details and precise lip synchronization, benefiting from our cross-modal diffusion process in the discrete space, which effectively addresses the one-to-many mapping issues.
+                    </p>
+                </details>
+<!--                 
+
+                <div id="quantitative-box" role="tabpanel" class="tab-pane fade content">
+                        <h3 style="text-align:center;">
+                            <strong>Quantitative Results</strong>
+                        </h3>
+                        <img src="data/fig/main_obj.png" , style="width: 100%;">
+                        <p>
+                            As shown in Tab.1, compared with Face-TTS, we achieve <strong>17.35% and 47.11%</strong> improvements in terms of EmoSim and SpkSim, reflecting the great ability to maintain voice-identity while enhancing consistency. For prosody modeling, we can estimate a more precise F0 contour with relative <strong>14.95%</strong> gains, exhibiting more natural speech expressiveness. The MCD improved by a relative <strong>18.96%</strong>, indicating minimal acoustic difference with the target speech. While Face-TTS achieves a better WER by utilizing over 10 times the data, ImaginTalk significantly improves naturalness and consistency with fewer data. 
+                        </p>
+                        <h3 style="text-align:center;">
+                            <strong>User Study</strong>
+                        </h3>
+                        <div style="text-align: center;">
+                            <img src="data/fig/main_sub.png" , style="width: 50%; text-align: center;">
+                        </div>
+                        
+                        <p>
+                            ImaginTalk demonstrates a clear advantage over SOTA methods in both metrics, particularly in achieving higher MOS naturalness with 28% relative improvement, which validates the effectiveness of our method. Furthermore, compared to acoustic-guided EmoSpeech, we achieve better MOS consistency, demonstrating our ability to generate speech with greater emotional and identity consistency.
+                        </p>
+                </div> -->
+
+       
+        </div>
+            
+            </article>
+        </main>    
+    </div>
+   
+    
+    
+    
+    <div id="fab" class="fab">
+        <a class="mainop" href="#myTab">
+            <i class="bi bi-arrow-bar-up"></i>
+        </a>
+    </div>
+
+
+    <script>
+        function muteAll() {
+            const elements = document.querySelectorAll('[id^="gallary_dub"]');
+            
+            elements.forEach(element => {
+                element.muted = true;
+            });
+        }
+    </script>
+
+    <script>
+        // 自动点击按钮
+        document.addEventListener('DOMContentLoaded', function () {
+            // 模拟点击按钮
+            document.getElementById('init').click();
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+
+button[type="submit"] {
+    background-color: #007BFF; /* 蓝色背景 */
+    color: white; /* 白色文字 */
+    padding: 10px 20px; /* 内边距 */
+    font-size: 16px; /* 字体大小 */
+    border: none; /* 无边框 */
+    border-radius: 5px; /* 圆角 */
+    cursor: pointer; /* 鼠标指针 */
+    transition: background-color 0.3s ease; /* 背景色过渡效果 */
+    display: block;
+    margin: 20px auto; /* 置于中央 */
+    text-align: center;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3; /* 悬停时背景色 */
+  }
+  
+  button[type="mute"] {
+    background-color: #1f88ae; /* 蓝色背景 */
+    color: white; /* 白色文字 */
+    padding: 8px 21px; /* 内边距 */
+    font-size: 14px; /* 字体大小 */
+    border: none; /* 无边框 */
+    border-radius: 5px; /* 圆角 */
+    cursor: pointer; /* 鼠标指针 */
+    transition: background-color 0.3s ease; /* 背景色过渡效果 */
+    display: block;
+    margin: 10px auto; /* 置于中央 */
+    text-align: center;
+  }
+
+  button[type="mute"]:hover {
+    background-color: #0b3581; /* 悬停时背景色 */
+  }
+
+  button[type="unmute"] {
+    background-color: #e44120; /* 蓝色背景 */
+    color: white; /* 白色文字 */
+    padding: 6px 25px; /* 内边距 */
+    font-size: 18px; /* 字体大小 */
+    border: none; /* 无边框 */
+    border-radius: 5px; /* 圆角 */
+    cursor: pointer; /* 鼠标指针 */
+    transition: background-color 0.3s ease; /* 背景色过渡效果 */
+    display: block;
+    margin: 12px auto; /* 置于中央 */
+    text-align: center;
+  }
+
+  button[type="unmute"]:hover {
+    background-color: #b61212; /* 悬停时背景色 */
+  }
+
+  mark {
+    background-color: #fffac1; /* 背景颜色为黄色 */
+    color: #0a73d5; /* 文本颜色为黑色 */
+    font-weight: bold
+  }
+  
+  .video-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .video-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .video-label {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .slider-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* 顶部对齐 */;
+    gap: 30px;
+    margin-top: 10px;
+  }
+  
+  .slider-container {
+    width: 100%;
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .slider {
+    width: 100%;
+    margin-right: 10px;
+  }
+  
+  .score-label {
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    width: 200px;
+    margin-top: 15px;
+    margin-bottom: -10px;
+  }
+  
+  .score-name-label {
+    color: rgb(71, 117, 200);
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    width: 300px;
+    margin-top: 15px;
+    margin-bottom: -10px;
+  }
+  
+
+  .small-audio-player {
+    width: 240px; /* 调整宽度 */
+    height: 40px; /* 调整高度 */
+}
+
+.mpc-audio-player {
+  width: 180px; /* 调整宽度 */
+  height: 40px; /* 调整高度 */
+  align-items: center; /* 顶部对齐 */;
+}
+
+.tiny-audio-player {
+  width: 200px; /* 调整宽度 */
+  height: 50px; /* 调整高度 */
+}
+
+.tinytiny-audio-player {
+  width: 220px; /* 调整宽度 */
+  height: 40px; /* 调整高度 */
+}
+
+
+.normal-audio-player {
+  width: 400px; /* 调整宽度 */
+  height: 40px; /* 调整高度 */
+}
+
+.special-div {
+  width: 170px; /* 调整宽度 */
+}
+
+.special-div2 {
+  width: 600px; /* 调整宽度 */
+}
