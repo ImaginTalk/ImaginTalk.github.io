@@ -48,6 +48,23 @@
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
+  <style>
+    .video-container {
+        position: relative;
+        width: 66%;
+        padding-bottom: 37.125%; /* 16:9 宽高比 (56.25% * 66%) */
+        margin: 0 auto;
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    </style>
+    
 
     <style>
         .blue-button {
@@ -122,13 +139,17 @@
         <h2 style="text-align:center;">
             <strong>Demo Video</strong>
         </h2>
-        <video  
-            controls 
-            loop 
-            style="max-width: 66%;"
-            poster="src/demo.jpg">
-            <source src="src/demo.mp4" type="video/mp4">
-        </video>
+
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/zao1zfEk96I?si=HiteVcM7_xpva85P" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
     </div>
 
     <div class="content" style="
