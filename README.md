@@ -15,7 +15,7 @@
 
 
 ### 📰 News
-* 21/03/2025 Released the Web project.
+* 20/03/2025 Released the Web project.
   
 
 ### 📕Introduction
