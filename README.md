@@ -6,8 +6,8 @@
     Official project of demo samples for <br>
     <b><em>Shushing! Let's Imagine an Authentic Speech from the Silent Video</em></b>
     </p>
-     <a href="https://arxiv.org/abs/ "><img src="https://img.shields.io/badge/arXiv- -b31b1b.svg" alt="version"></a>    
-    <a href="https://github.com/imagintalk/imagintalk.github.io"><img src="https://img.shields.io/badge/Platform-linux-lightgrey" alt="version"></a>
+     <a href="https://arxiv.org/abs/2503.14928"><img src="https://img.shields.io/badge/arXiv-2503.14928-b31b1b.svg" alt="arxiv"></a>    
+    <a href="https://imagintalk.github.io"><img src="https://img.shields.io/badge/Project-ImaginTalk-blue" alt="project"></a>
     <a href="https://github.com/imagintalk/imagintalk.github.io"><img src="https://img.shields.io/badge/Python-3.8+-orange" alt="version"></a>
     <a href="https://github.com/imagintalk/imagintalk.github.io"><img src="https://img.shields.io/badge/PyTorch-2.0+-brightgreen" alt="python"></a>
     <a href="https://github.com/imagintalk/imagintalk.github.io"><img src="https://img.shields.io/badge/License-MIT-red.svg" alt="mit"></a>
@@ -15,7 +15,7 @@
 
 
 ### 📰 News
-* 21/03/2025 Released the Web project.
+* 20/03/2025 Released the Web project.
   
 
 ### 📕Introduction
